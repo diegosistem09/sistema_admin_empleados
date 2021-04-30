@@ -22,7 +22,12 @@ class EmpleadoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            /*'nombres' => $this->faker->name(),
+            'apellidos'=> $this->faker->text(),
+            'identidad'=> $this->faker->text(),
+            'direccion'=> $this->faker->text(),
+            'telefono' => $this->faker->text(),
+            'ciudad_nacimiento'=> $this->faker->text()*/
         ];
     }
 }
