@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -27,3 +27,12 @@ Route::get('pais',[App\Http\Controllers\EmpleadoController::class,'pais']);
 Route::get('ciudad/{id}',[App\Http\Controllers\EmpleadoController::class,'ciudad']);
 
 
+
+Auth::routes();
+
+#Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::group(['middleware' => 'auth'],function(){
+    Route::get('/', [App\Http\Controllers\EmpleadoController::class,'index'])->name('home');
+});
