@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+#Route::resource('/empleado',[EmpleadoController::class]);
+Route::resource('empleado', App\Http\Controllers\EmpleadoController::class);
+
+
+Route::get('pais',[App\Http\Controllers\EmpleadoController::class,'pais']);
+Route::get('ciudad/{id}',[App\Http\Controllers\EmpleadoController::class,'ciudad']);
+
+
